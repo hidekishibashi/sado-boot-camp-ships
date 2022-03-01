@@ -46,6 +46,7 @@
           <tr>
             <td id="ctl00_tcLoginNm"><span id="ctl00_lblLogin">ログイン</span><span id="ctl00_lblLoginName">/白井 翔大</span><span id="ctl00_lblKeisho">様</span></td>
           </tr>
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
         </tbody>
       </table>
       <div class="ApplicationName"> <span id="ctl00_lblApplicationName">会員メニュー</span> </div>

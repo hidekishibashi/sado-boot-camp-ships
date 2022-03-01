@@ -82,18 +82,24 @@
                 <div id="divLoginMainArea">
                   <div id="divLoginError">
                     <div class="WarningMsg" id="ctl00_WebContentPlaceHolder_lblMsg">
-                    <% if alert.present? %>
-                      <% alert.each do |message| %>
-                        <%=  message[1] %>
-                      <% end %>
-                    <% end %>
-
-                      <% alert %>
+                        <% if alert.present? %>
+                        <%= alert %>
+                        <br>
+                        <br>
+                           <% if (alert.is_a? String) %>
+                              <%= alert %>
+                           <% else %>
+                              <% alert.each_value do |v| %>
+                                <%= v %>
+                                <br>
+                              <% end %>
+                           <% end %>
+                        <% end %>
                     </div>
                   </div>
                   <div id="divKaiinBangoArea">
                     <div class="ColumnTitle">
-                      <%= f.label :会員番号,id: "ctl00_WebContentPlaceHolder_txtKaiinBango" %><br />
+                      <%= f.label :会員番号%><br />
                     </div>
                     <div>
                       <%= f.text_field :name, autofocus: true, autocomplete: "name",placeholder: "半角英数字で入力してください。" ,class: "Input",type: "text",id: "ctl00_WebContentPlaceHolder_txtKaiinBango"  %>
@@ -101,15 +107,26 @@
                   </div>
                   <div id="divPasswordArea">
                     <div class="ColumnTitle">
-                      <%= f.label :パスワード,id: "ctl00_WebContentPlaceHolder_lblPassword"  %><br />
+                      <%= f.label :password%><br />
                     </div>
                     <div>
-                      <%= f.password_field :password, autocomplete: "current-password",type: "password",class: "Input",placeholder: "半角英数字で入力してください。" %>
+                      <%= f.password_field :password, id: "ctl00_WebContentPlaceHolder_lblPassword", autocomplete: "current-password",type: "password",class: "Input",placeholder: "半角英数字で入力してください。" %>
                     </div>
                   </div>
                   <div id="divLoginButtonFrame">
                     <%= f.submit "ログイン",type: "submit",id: "ctl00_WebContentPlaceHolder_btnLogin",class: "ButtonBlue ButtonMainText",value: "ログイン" %>
                   </div>
+                  <script type="text/javascript">
+                  $(document).ready(function() {
+                    $("#ctl00_WebContentPlaceHolder_btnLogin").click(function(event) {
+                      var name = $("#ctl00_WebContentPlaceHolder_txtKaiinBango").val();
+                      if (name == '' || name == 'undefined') {
+                          event.preventDefault();
+                          $("#ctl00_WebContentPlaceHolder_lblMsg").html("名前はまだ入力していません。")
+                        }
+                    })
+                  })
+                </script>
                   <div id="divLinkKaiinPassword" class="fontHiragino KaiinPasswordLink">
                     <%= link_to "会員番号・パスワードをお忘れですか？", new_password_path(resource_name) %><br /> </div>
                   </div>
