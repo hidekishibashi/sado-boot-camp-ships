@@ -8,13 +8,6 @@
   <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../image/favicon.ico" />
   <link rel="icon" type="image/vnd.microsoft.icon" href="../image/favicon.ico" />
   <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5J5QL3');
-  </script>
   <!-- End Google Tag Manager -->
   <link rel="stylesheet" href="https://reservation.sadokisen.co.jp/webyoyaku/css/wj/wjg0000.css" type="text/css"/>
   <link rel="stylesheet" href="https://reservation.sadokisen.co.jp/webyoyaku/css/controls/josenYoyakuProgress.css" type="text/css"/>
@@ -37,8 +30,6 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5J5QL3"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="FontNotoSans">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name),id: "aspnetForm",class: "FontNotoSans",name: "aspnetForm",method: "post",action: "./WJG0420.aspx?Lang=ja-JP&amp;_ga=2.67846930.204386397.1645664377-380420279.1644998245") do |f| %>
-      <div> <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" /> <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" /> <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" /> <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODkyOTMzNDgzDxYCHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAmYPD2QWCB4OU2VydmljZU1lc3NhZ2VlHglIZWFkZXJLYm4FATEeC0hlYWRlclRpdGxlBQzjg63jgrDjgqTjg7MeB01lbnVNZWkFEuS8muWToeODreOCsOOCpOODsxYEAgEPZBYCAgYPFgIeBFRleHQFqQM8IS0tIEdvb2dsZSBUYWcgTWFuYWdlciAtLT4NCjxzY3JpcHQ+KGZ1bmN0aW9uKHcsZCxzLGwsaSl7d1tsXT13W2xdfHxbXTt3W2xdLnB1c2goeydndG0uc3RhcnQnOg0KbmV3IERhdGUoKS5nZXRUaW1lKCksZXZlbnQ6J2d0bS5qcyd9KTt2YXIgZj1kLmdldEVsZW1lbnRzQnlUYWdOYW1lKHMpWzBdLA0Kaj1kLmNyZWF0ZUVsZW1lbnQocyksZGw9bCE9J2RhdGFMYXllcic/JyZsPScrbDonJztqLmFzeW5jPXRydWU7ai5zcmM9DQonaHR0cHM6Ly93d3cuZ29vZ2xldGFnbWFuYWdlci5jb20vZ3RtLmpzP2lkPScraStkbDtmLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGosZik7DQp9KSh3aW5kb3csZG9jdW1lbnQsJ3NjcmlwdCcsJ2RhdGFMYXllcicsJ0dUTS01SjVRTDMnKTs8L3NjcmlwdD4NCjwhLS0gRW5kIEdvb2dsZSBUYWcgTWFuYWdlciAtLT4NCmQCAw9kFgYCAQ8WAh8FBfYBPCEtLSBHb29nbGUgVGFnIE1hbmFnZXIgKG5vc2NyaXB0KSAtLT4NCjxub3NjcmlwdD48aWZyYW1lIHNyYz0iaHR0cHM6Ly93d3cuZ29vZ2xldGFnbWFuYWdlci5jb20vbnMuaHRtbD9pZD1HVE0tNUo1UUwzIg0KaGVpZ2h0PSIwIiB3aWR0aD0iMCIgc3R5bGU9ImRpc3BsYXk6bm9uZTt2aXNpYmlsaXR5OmhpZGRlbiI+PC9pZnJhbWU+PC9ub3NjcmlwdD4NCjwhLS0gRW5kIEdvb2dsZSBUYWcgTWFuYWdlciAobm9zY3JpcHQpIC0tPg0KZAIFD2QWDAIBD2QWBgIBDw8WAh4LTmF2aWdhdGVVcmwFHGh0dHBzOi8vd3d3LnNhZG9raXNl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gZfjgY/jga/jgIE8YSBocmVmPSJodHRwczovL3d3dy5zYWRva2lzZW4uY28uanAvP25ld3M9MjAyMTExMTIiIHRhcmdldD0iX2JsYW5rIj7jgZPjgaHjgok8L2E+44KS44GU56K66KqN44GP44Gg44GV44GE44CCZAIEDw8WAh8HaGRkAgkPZBYCAgMPDxYCHwUFD+S4gOimp+OCkuimi+OCi2RkAgsPDxYCHwYFHGh0dHBzOi8vd3d3LnNhZG9raXNlbi5jby5qcC9kZAIHDw8WAh8FBYYB44Kk44Oz44K/44O844ON44OD44OI5LqI57SE44Gr6Zai44GZ44KL44GK5ZWP44GE5ZCI44KP44Gb5YWI77ya5L2Q5rih5rG96Ii55LqI57SE44K744Oz44K/44O8Jm5ic3A7Jm5ic3A7VEVMOjAyNS0yNDUtNjEyMigwODozMC0xODowMClkZAIJDxYCHwUFBiZuYnNwO2QCCw8PFgIfBQU6Q29weXJpZ2h0IChDKSBTYWRvIFN0ZWFtIFNoaXAgQ08uLExURC5BbGwgUmlnaHRzIFJlc2VydmVkLmRkAgcPFgIfBQXCBjxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4oZnVuY3Rpb24oZCx1KXt2YXIgYj1kLmdldEVsZW1lbnRzQnlUYWdOYW1lKCJzY3JpcHQiKVswXSxqPWQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7ai5hc3luYz10cnVlO2ouc3JjPXU7Yi5wYXJlbnROb2RlLmluc2VydEJlZm9yZShqLGIpO30pKGRvY3VtZW50LCIvL2ltZy5hay5pbXBhY3QtYWQuanAvdXQvY2E5ZGY0N2Y0NjNjNDc1M18yNTgyLmpzIik7PC9zY3JpcHQ+PG5vc2NyaXB0PjxpZnJhbWUgc3JjPSIvL25zcHQudW5pdGFnLmpwL2NhOWRmNDdmNDYzYzQ3NTNfMjU4Mi5waHAiIHdpZHRoPSIwIiBoZWlnaHQ9IjAiIGZyYW1lYm9yZGVyPSIwIj48L2lmcmFtZT48L25vc2NyaXB0Pg0KPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPg0KICAoZnVuY3Rpb24gKCkgew0KICAgIHZhciB0YWdqcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpOw0KICAgIHZhciBzID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoInNjcmlwdCIpWzBdOw0KICAgIHRhZ2pzLmFzeW5jID0gdHJ1ZTsNCiAgICB0YWdqcy5zcmMgPSAiLy9zLnlqdGFnLmpwL3RhZy5qcyNzaXRlPWdnUGprNFUiOw0KICAgIHMucGFyZW50Tm9kZS5pbnNlcnRCZWZvcmUodGFnanMsIHMpOw0KICB9KCkpOw0KPC9zY3JpcHQ+DQo8bm9zY3JpcHQ+DQogIDxpZnJhbWUgc3JjPSIvL2IueWp0YWcuanAvaWZyYW1lP2M9Z2dQams0VSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZnJhbWVib3JkZXI9IjAiIHNjcm9sbGluZz0ibm8iIG1hcmdpbmhlaWdodD0iMCIgbWFyZ2lud2lkdGg9IjAiPjwvaWZyYW1lPg0KPC9ub3NjcmlwdD4NCmQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFLWN0bDAwJFdlYkNvbnRlbnRQbGFjZUhvbGRlciRjaGtPc2hpcmFzZUl0aXJhbgUnY3RsMDAkV2ViQ29udGVudFBsYWNlSG9sZGVyJGdyZE9zaGlyYXNlDzwrAAwBCAIBZPlSa/7SelyfmfykRSsUG95Xw9t8uduBTKun47uJZbmo" /> </div>
-      <div> <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5412D7B4" /> <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAmWu5JpuwtdcNQe5C4xM0X7LSgcR95sQwxfTggKsu0NGxEOIm2Gr3bYIPEQojrN+w3JpivgPS/srJcyZlov4N9gdQdcKL3dWxReNfdqzqYqttoUex6K/jh6d6qQcyrOvhUKZYQWxI5rB3tatJaX3kmiZEU3N5eHV2FqEioQtL32cXgkley96k6A1J04OIB/E+BEHL8PiO45oAo0/ao1ffoMI2k5uq+T5yVLvrOoGWJt4Q==" /> </div>
       <div id="ctl00_divPageTitleArea" class="PageTitleArea">
         <div style="display:table;">
           <div style="display:table-cell;">
@@ -52,11 +43,6 @@
           <div id="divServiceMessage" class="ServiceMessage">
             <span id="ctl00_lblServiceMessage" class="Warning"></span>
             <a href="#">
-              <script type="text/javascript">
-                //<![CDATA[
-                    Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$WebContentPlaceHolder$updLogin','','tctl00$WebContentPlaceHolder$updOshirase',''], [], [], 90, 'ctl00');
-                    //]]>
-              </script>
             </a>
           </div>
         </div>
@@ -118,15 +104,37 @@
                   </div>
                   <script type="text/javascript">
                   $(document).ready(function() {
-                    $("#ctl00_WebContentPlaceHolder_btnLogin").click(function(event) {
-                      var name = $("#ctl00_WebContentPlaceHolder_txtKaiinBango").val();
-                      if (name == '' || name == 'undefined') {
-                          event.preventDefault();
-                          $("#ctl00_WebContentPlaceHolder_lblMsg").html("名前はまだ入力していません。")
-                        }
-                    })
-                  })
+                        $("#ctl00_WebContentPlaceHolder_btnLogin").bind("click", function(event) {
+                          var name = $("#ctl00_WebContentPlaceHolder_txtKaiinBango").val();
+                          console.log($("#ctl00_WebContentPlaceHolder_txtKaiinBango"));
+                          var password = $("#ctl00_WebContentPlaceHolder_lblPassword").val();
+                          if (!$("#ctl00_WebContentPlaceHolder_lblMsg").val() == '') {
+                            $("#ctl00_WebContentPlaceHolder_lblMsg").val("")
+                          }
+                          if (name == '' && password == "") {
+                            $("#ctl00_WebContentPlaceHolder_lblMsg").html("名前　パスワー<br>")
+                            event.preventDefault();
+                            event.stopPropagation();
+                            } 
+                          else if ( password == "") {
+                            $("#ctl00_WebContentPlaceHolder_lblMsg").html("パスワード")
+                            $("#ctl00_WebContentPlaceHolder_txtKaiinBango").val("");
+                            event.preventDefault();
+                            event.stopPropagation();
+                          } 
+                        else if (name == '') {
+                          $("#ctl00_WebContentPlaceHolder_lblMsg").val("")
+                          $("#ctl00_WebContentPlaceHolder_lblMsg").html("名前")
+                          $("#ctl00_WebContentPlaceHolder_lblPassword").val("");
+                            event.preventDefault();
+                            event.stopPropagation();
+                            }
+                          })
+                      })
                 </script>
+                  <div id="divLinkKaiinPassword" class="fontHiragino KaiinPasswordLink">
+                    <%= link_to "新規会員登録", new_registration_path(resource_name) %><br /> </div>
+                  </div>
                   <div id="divLinkKaiinPassword" class="fontHiragino KaiinPasswordLink">
                     <%= link_to "会員番号・パスワードをお忘れですか？", new_password_path(resource_name) %><br /> </div>
                   </div>
@@ -143,9 +151,6 @@
               <span id="ctl00_WebContentPlaceHolder_lblSadokisenTopPage">トップページに戻る</span>
             </div>
           </a><br><br>
-          <div class="Verisign">
-            <script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.sadokisen.co.jp&amp;size=M&amp;use_flash=NO&amp;use_transparent=NO&amp;lang=ja"></script>
-          </div>
         </div>
       </div>
       <div class="PageFooter fontHiragino"><br/><span id="ctl00_lblCopyright"></span><input type="hidden" name="ctl00$hidid" id="ctl00_hidid" value="01" /></div>
