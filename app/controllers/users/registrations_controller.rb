@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  # before_action :configure_permitted_parameters
+
+
 
   # GET /resource/sign_up
   # def new
@@ -10,9 +13,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    puts "\n"
+    puts params[:user]
+    puts "\n"
+    puts params[:user][:members][:first_name]
+    puts "\n"
+    puts params[:user][:cars][:car_displacement_1]
+    puts "\n"
+
+    # member = Member.new()
+    # member.first_name = params[:user][:members][:first_name]
+    logger.debug params[:user][:members][:first_name]
+    member = Member.create(first_name: params[:user][:members][:first_name])
+    car = Car.create(car_displacement_1: params[:user][:cars][:car_displacement_1])
+
+    super
+  end
+
+
 
   # GET /resource/edit
   # def edit
