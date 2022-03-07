@@ -72,6 +72,17 @@
       <div class="ApplicationName"> <span id="ctl00_lblApplicationName">お客様情報の登録</span> </div>
     </div>
     <div class="PageBody">
+    <table id="ctl00_tblErr" border="0" style="width:100%;">
+        <tbody>
+          <tr style="width:100%;">
+            <td class="ErrorMsgCell" style="width:100%;">
+              <span id="ctl00_lblErrorMessage"><%= debug(flash:notice) %>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
       <a href="#" tabindex="-1">
         <script type="text/javascript">
           //<![CDATA[
@@ -426,7 +437,6 @@
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellMailAddressPcKakunin" class="InputCell">
                 <div class="InputTableColumn "> <span id="ctl00_ContentPlaceHolder1_lblMailAddressPcKakunin" class="HosokuText">確認入力</span> </div>
-                <%= f.text_field :email, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtMailAddressPcKakunin",class: "LargeTextBox",name: "ctl00$ContentPlaceHolder1$txtMailAddressPcKakunin",type: "text",maxlength: "128",tabindex: "20",placeholder: "確認のため、再度入力して下さい。",style: "ime-mode:disabled;" %>
               </div>
             </div>
           </div>
@@ -434,7 +444,7 @@
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellMailAddressKeitai" class="InputCell">
                 <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblMailAddressKeitai" class="HosokuText">メールアドレス②</span> </div>
-                <%= f.text_field :email_2, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtMailAddressKeitai",class: "LargeTextBox",name: "ctl00$ContentPlaceHolder1$txtMailAddressKeitai",type: "text",maxlength: "128",tabindex: "21",placeholder: "例）sadokisen@email.com（半角）",style: "ime-mode:disabled;" %>
+                <%= f.text_field :email_2, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtMailAddressKeitai",class: "LargeTextBox",type: "text",maxlength: "128",tabindex: "21",placeholder: "例）sadokisen@email.com（半角）",style: "ime-mode:disabled;" %>
               </div>
             </div>
           </div>
@@ -442,7 +452,6 @@
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellMailAddressKeitaiKakunin" class="InputCell">
                 <div class="InputTableColumn "> <span id="ctl00_ContentPlaceHolder1_lblMailAddressKeitaiKakunin" class="HosokuText">確認入力</span> </div>
-                <%= f.text_field :email_2, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtMailAddressKeitaiKakunin",class: "LargeTextBox",name: "ctl00$ContentPlaceHolder1$txtMailAddressKeitaiKakunin",type: "text",maxlength: "128",tabindex: "22",placeholder: "確認のため、再度入力して下さい。",style: "ime-mode:disabled;" %>
               </div>
             </div>
           </div>
@@ -524,7 +533,7 @@
                                         "軽乗用車": 3,
                                         "バス": 4,
                                         "二輪": 5
-                                          }, { include_blank: '車種を選択'}, {id: 'car_model2',name:'ctl00$ContentPlaceHolder1$ddlShashu2', required: true } %>
+                                          }, { include_blank: '車種を選択'}, {id: 'car_model2', required: true } %>
                         </div>
                       </div>
                       <div id="ctl00_ContentPlaceHolder1_cellZentyouHaiki2" class="InputCell">
@@ -663,4 +672,15 @@
             setMenuOptions2(e.target.value); 
         });
       </script>
+      <script type="text/javascript">
+      $(document).ready(function() {
+          $("#ctl00_ContentPlaceHolder1_btnEntry").click(function(event) {
+              var password = $("#ctl00_ContentPlaceHolder1_txtConfirmPassword").val();
+                if (password == '') {
+                  event.preventDefault();
+                  $("#ctl00_lblErrorMessage").html("パスワードに値を入力してください。")
+               }
+            })
+        })
+   </script>
 </body>
