@@ -524,14 +524,14 @@
                                         "軽乗用車": 3,
                                         "バス": 4,
                                         "二輪": 5
-                                          }, { include_blank: '車種を選択'}, {id: 'car_model',name:'ctl00$ContentPlaceHolder1$ddlShashu2', required: true } %>
+                                          }, { include_blank: '車種を選択'}, {id: 'car_model2',name:'ctl00$ContentPlaceHolder1$ddlShashu2', required: true } %>
                         </div>
                       </div>
                       <div id="ctl00_ContentPlaceHolder1_cellZentyouHaiki2" class="InputCell">
                         <div class="SelectWrap">
                           <%= c.select :car_displacement_second, {
                                           
-                                          }, { include_blank: '車長さを選択'}, {id:'car_displacement',name:'ctl00$ContentPlaceHolder1$ddlZentyouHaiki2', required: true } %>
+                                          }, { include_blank: '車長さを選択'}, {id:'car_displacement2',name:'ctl00$ContentPlaceHolder1$ddlZentyouHaiki2', required: true } %>
                         </div>
                       </div>
                     </div>
@@ -607,31 +607,60 @@
       <font color="red">&nbsp;</font> <br> </div>
     <% end %>
       <script>
-        const Displacement = {
+        const displacement = {
             "1": ["3m未満", "3m以上4m未満", "4m以上5m未満", "5m以上6m未満"],
             "2": ["3m以上4m未満", "4m以上5m未満", "5m以上6m未満"],
             "3": ["3m未満", "3m以上4ｍ未満"],
             "4": ["6m以上7m未満", "7m以上8m未満", "8m以上9m未満"],
-            "5": ["自動車", "原付（125cc以下）", "750cc未満", "750cc以上"]
+            "5": ["自転車", "原付（125cc以下）", "750cc未満", "750cc以上"]
          };
   
         function setMenuOptions(selectedCarModel){
+          
           const selectCarDisplacement = document.getElementById('car_displacement'); 
   
-          Displacement[selectedCarModel].forEach((displacement, index) => {
+          displacement[selectedCarModel].forEach((displacement, index) => {
             const option = document.createElement('option'); 
-            console.log(option);
             option.value = index; 
             option.innerHTML = displacement; 
             selectCarDisplacement.appendChild(option); 
           });
-          
         };
   
         const modelSelect = document.getElementById('car_model');
         
-        modelSelect.addEventListener('change', (e) => {
+        modelSelect.addEventListener('change', (e) => { 
+          $('#car_displacement').find('option:not(:first)').remove();
             setMenuOptions(e.target.value); 
+        });
+      </script>
+
+      <script>
+        const displacement2 = {
+            "1": ["3m未満", "3m以上4m未満", "4m以上5m未満", "5m以上6m未満"],
+            "2": ["3m以上4m未満", "4m以上5m未満", "5m以上6m未満"],
+            "3": ["3m未満", "3m以上4ｍ未満"],
+            "4": ["6m以上7m未満", "7m以上8m未満", "8m以上9m未満"],
+            "5": ["自転車", "原付（125cc以下）", "750cc未満", "750cc以上"]
+         };
+
+        function setMenuOptions2(selectedCarModel){
+          
+          const selectCarDisplacement2 = document.getElementById('car_displacement2'); 
+  
+          displacement2[selectedCarModel].forEach((displacement, index) => {
+            const option = document.createElement('option'); 
+            option.value = index; 
+            option.innerHTML = displacement; 
+            selectCarDisplacement2.appendChild(option); 
+          });
+        };
+  
+        const modelSelect2 = document.getElementById('car_model2');
+        
+        modelSelect2.addEventListener('change', (e) => { 
+          $('#car_displacement2').find('option:not(:first)').remove();
+            setMenuOptions2(e.target.value); 
         });
       </script>
 </body>
