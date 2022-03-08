@@ -12,38 +12,39 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
    def create
-     super
-     member = Member.create(first_name: params[:user][:members][:first_name],
-                            family_name: params[:user][:members][:family_name],
-                            first_name_kana: params[:user][:members][:first_name_kana],
-                            family_name_kana: params[:user][:members][:family_name_kana],
-                            birthday_year: params[:user][:members][:birthday_year],
-                            birthday_month: params[:user][:members][:birthday_month],
-                            birthday_day: params[:user][:members][:birthday_day],
-                            gender: params[:user][:members][:gender],
-                            landline_number_first: params[:user][:members][:landline_number_first],
-                            landline_number_second: params[:user][:members][:landline_number_second],
-                            landline_number_third: params[:user][:members][:landline_number_third],
-                            telephone_number_first: params[:user][:members][:telephone_number_first],
-                            telephone_number_second: params[:user][:members][:telephone_number_second],
-                            telephone_number_third: params[:user][:members][:telephone_number_third],
-                            post_code: params[:user][:members][:post_code],
-                            address: params[:user][:members][:address],
-                            municipalities: params[:user][:members][:municipalities],
-                            email_2: params[:user][:members][:email_2])
-
-     car = Car.create(car_model: params[:user][:cars][:car_model],
-                      car_displacement: params[:user][:cars][:car_displacement],
-                      car_registered_place: params[:user][:cars][:car_registered_place],
-                      car_model_number: params[:user][:cars][:car_model_number],
-                      car_kana: params[:user][:cars][:car_kana],
-                      car_number: params[:user][:cars][:car_number],
-                      car_model_second: params[:user][:cars][:car_model_second],
-                      car_displacement_second: params[:user][:cars][:car_displacement_second],
-                      car_registered_place_second: params[:user][:cars][:car_registered_place_second],
-                      car_model_number_second: params[:user][:cars][:car_registered_place_second],
-                      car_kana_second: params[:user][:cars][:car_kana_second],
-                      car_number_second: params[:user][:cars][:car_number_second])
+    puts params[:user][:members][:first_name]
+    puts params[:user][:cars][:car_model]
+    member = Member.create(first_name: params[:user][:members][:first_name],
+    family_name: params[:user][:members][:family_name],
+    first_name_kana: params[:user][:members][:first_name_kana],
+    family_name_kana: params[:user][:members][:family_name_kana],
+    birthday_year: params[:user][:members][:birthday_year],
+    birthday_month: params[:user][:members][:birthday_month],
+    birthday_day: params[:user][:members][:birthday_day],
+    gender: params[:user][:members][:gender],
+    landline_number_first: params[:user][:members][:landline_number_first],
+    landline_number_second: params[:user][:members][:landline_number_second],
+    landline_number_third: params[:user][:members][:landline_number_third],
+    telephone_number_first: params[:user][:members][:telephone_number_first],
+    telephone_number_second: params[:user][:members][:telephone_number_second],
+    telephone_number_third: params[:user][:members][:telephone_number_third],
+    post_code: params[:user][:members][:post_code],
+    address: params[:user][:members][:address],
+    municipalities: params[:user][:members][:municipalities])
+    
+    car = Car.create(car_model: params[:user][:cars][:car_model],
+    car_displacement: params[:user][:cars][:car_displacement],
+    car_registered_place: params[:user][:cars][:car_registered_place],
+    car_model_number: params[:user][:cars][:car_model_number],
+    car_kana: params[:user][:cars][:car_kana],
+    car_number: params[:user][:cars][:car_number],
+    car_model_second: params[:user][:cars][:car_model_second],
+    car_displacement_second: params[:user][:cars][:car_displacement_second],
+    car_registered_place_second: params[:user][:cars][:car_registered_place_second],
+    car_model_number_second: params[:user][:cars][:car_registered_place_second],
+    car_kana_second: params[:user][:cars][:car_kana_second],
+    car_number_second: params[:user][:cars][:car_number_second])
+    super
   end
   # GET /resource/edit
   # def edit
