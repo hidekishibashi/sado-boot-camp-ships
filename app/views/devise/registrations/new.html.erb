@@ -76,7 +76,7 @@
         <tbody>
           <tr style="width:100%;">
             <td class="ErrorMsgCell" style="width:100%;">
-              <span id="ctl00_lblErrorMessage"><%= debug(flash:notice) %>
+              <span id="ctl00_lblErrorMessage"><%= notice %>
               </span>
             </td>
           </tr>
@@ -102,11 +102,11 @@
               <div class="InputTableRow FontHiragino">
                 <div id="ctl00_ContentPlaceHolder1_cellKanaSei" class="InputCell">
                   <div class="InputTableColumn "> <span id="ctl00_ContentPlaceHolder1_lblKanaSei" class="HosokuText">セイ</span> </div>
-                  <%= m.text_field :family_name_kana, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtKanaSei",class: "MediumTextBox",name: "ctl00$ContentPlaceHolder1$txtKanaSei",type: "text",maxlength: "30",tabindex: "1",placeholder: "例）サド",style: "ime-mode:active;" %>
+                  <%= m.text_field :family_name_kana, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtKanaSei",class: "MediumTextBox",type: "text",maxlength: "30",tabindex: "1",placeholder: "例）サド",style: "ime-mode:active;" %>
                 </div>
                 <div id="ctl00_ContentPlaceHolder1_cellKanaMei" class="InputCell">
                   <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblKanaMei" class="HosokuText">メイ</span> </div>
-                  <%= m.text_field :first_name_kana, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtKanaMei",class: "MediumTextBox",name: "ctl00$ContentPlaceHolder1$txtKanaMei",type: "text",maxlength: "30",tabindex: "2",placeholder: "例）タロウ",style: "ime-mode:active;" %>
+                  <%= m.text_field :first_name_kana, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtKanaMei",class: "MediumTextBox",type: "text",maxlength: "30",tabindex: "2",placeholder: "例）タロウ",style: "ime-mode:active;" %>
                 </div>
               </div>
             </div>
@@ -114,11 +114,11 @@
               <div class="InputTableRow FontHiragino">
                 <div id="ctl00_ContentPlaceHolder1_cellKanjiSei" class="InputCell">
                   <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblKanjiSei" class="HosokuText">姓</span> </div>
-                  <%= m.text_field :family_name, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtKanjiSei",class: "MediumTextBox",name: "ctl00$ContentPlaceHolder1$txtKanjiSei",type: "text",maxlength: "30",tabindex: "3",placeholder: "例）佐渡",style: "ime-mode:active;" %>
+                  <%= m.text_field :family_name, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtKanjiSei",class: "MediumTextBox",type: "text",maxlength: "30",tabindex: "3",placeholder: "例）佐渡",style: "ime-mode:active;" %>
                 </div>
                 <div id="ctl00_ContentPlaceHolder1_cellKanjiMei" class="InputCell">
                   <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblKanjiMei" class="HosokuText">名</span> </div>
-                  <%= m.text_field :first_name, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtKanjiMei",class: "MediumTextBox",name: "ctl00$ContentPlaceHolder1$txtKanjiMei",type: "text",maxlength: "30",tabindex: "4",placeholder: "例）太郎",style: "ime-mode:active;" %>
+                  <%= m.text_field :first_name, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtKanjiMei",class: "MediumTextBox",type: "text",maxlength: "30",tabindex: "4",placeholder: "例）太郎",style: "ime-mode:active;" %>
                 </div>
               </div>
             </div>
@@ -282,11 +282,11 @@
           <div id="ctl00_ContentPlaceHolder1_divTelJitakuInputTable" class="InputTable">
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellTelJitaku1" class="InputCell">
-                <%= m.text_field :landline_number_first, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelJitaku1",class: "SmallTextBox",name: "ctl00$ContentPlaceHolder1$txtTelJitaku1",type: "text",maxlength: "4",tabindex: "9",style: "ime-mode:disabled;" %> <span id="ctl00_ContentPlaceHolder1_lblHaifun1">－</span> </div>
+                <%= m.text_field :landline_number_first, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelJitaku1",class: "SmallTextBox",type: "text",maxlength: "4",tabindex: "9",style: "ime-mode:disabled;" %> <span id="ctl00_ContentPlaceHolder1_lblHaifun1">－</span> </div>
               <div id="ctl00_ContentPlaceHolder1_cellTelJitaku2" class="InputCell">
-                <%= m.text_field :landline_number_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelJitaku2",class: "SmallTextBox",name: "ctl00$ContentPlaceHolder1$txtTelJitaku2",type: "text",maxlength: "4",tabindex: "10",style: "ime-mode:disabled;" %> <span id="ctl00_ContentPlaceHolder1_lblHaifun2">－</span> </div>
+                <%= m.text_field :landline_number_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelJitaku2",class: "SmallTextBox",type: "text",maxlength: "4",tabindex: "10",style: "ime-mode:disabled;" %> <span id="ctl00_ContentPlaceHolder1_lblHaifun2">－</span> </div>
               <div id="ctl00_ContentPlaceHolder1_cellTelJitaku3" class="InputCell">
-                <%= m.text_field :landline_number_third, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelJitaku3",class: "SmallTextBox",name: "ctl00$ContentPlaceHolder1$txtTelJitaku3",type: "text",maxlength: "4",tabindex: "11",style: "ime-mode:disabled;" %>
+                <%= m.text_field :landline_number_third, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelJitaku3",class: "SmallTextBox",type: "text",maxlength: "4",tabindex: "11",style: "ime-mode:disabled;" %>
               </div>
             </div>
           </div>
@@ -296,11 +296,11 @@
           <div id="ctl00_ContentPlaceHolder1_divTelNichuuInputTable" class="InputTable">
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellTelNichuu1" class="InputCell">
-                <%= m.text_field :telephone_number_first, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelNichuu1",class: "SmallTextBox",name: "ctl00$ContentPlaceHolder1$txtTelNichuu1",type: "text",maxlength: "4",tabindex: "12",style: "ime-mode:disabled;" %> <span id="ctl00_ContentPlaceHolder1_lblHaifun3">－</span> </div>
+                <%= m.text_field :telephone_number_first, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelNichuu1",class: "SmallTextBox",type: "text",maxlength: "4",tabindex: "12",style: "ime-mode:disabled;" %> <span id="ctl00_ContentPlaceHolder1_lblHaifun3">－</span> </div>
               <div id="ctl00_ContentPlaceHolder1_cellTelNichuu2" class="InputCell">
-                <%= m.text_field :telephone_number_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelNichuu2",class: "SmallTextBox",name: "ctl00$ContentPlaceHolder1$txtTelNichuu2",type: "text",maxlength: "4",tabindex: "13",style: "ime-mode:disabled;" %> <span id="ctl00_ContentPlaceHolder1_lblHaifun4">－</span> </div>
+                <%= m.text_field :telephone_number_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelNichuu2",class: "SmallTextBox",type: "text",maxlength: "4",tabindex: "13",style: "ime-mode:disabled;" %> <span id="ctl00_ContentPlaceHolder1_lblHaifun4">－</span> </div>
               <div id="ctl00_ContentPlaceHolder1_cellTelNichuu3" class="InputCell">
-                <%= m.text_field :telephone_number_third, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelNichuu3",class: "SmallTextBox",name: "ctl00$ContentPlaceHolder1$txtTelNichuu3",type: "text",maxlength: "4",tabindex: "14",style: "ime-mode:disabled;" %>
+                <%= m.text_field :telephone_number_third, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtTelNichuu3",class: "SmallTextBox",type: "text",maxlength: "4",tabindex: "14",style: "ime-mode:disabled;" %>
               </div>
             </div>
           </div>
@@ -315,9 +315,8 @@
           <div id="ctl00_ContentPlaceHolder1_divYuubinNoInputTable" class="InputTable">
             <div class="InputTableRow ">
               <div id="ctl00_ContentPlaceHolder1_cellYuubinNo" class="InputCell">
-                <%= m.text_field :post_code, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtYuubinNo",class: "MediumTextBox FontHiragino",name: "ctl00$ContentPlaceHolder1$txtYuubinNo",type: "text",maxlength: "7",tabindex: "15",placeholder: "半角数字入力(ハイフン無し)",style: "ime-mode:disabled;" %>
+                <%= m.text_field :post_code, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtYuubinNo",class: "MediumTextBox FontHiragino",type: "text",maxlength: "7",tabindex: "15",placeholder: "半角数字入力(ハイフン無し)",style: "ime-mode:disabled;" %>
               </div>
-              <div id="ctl00_ContentPlaceHolder1_cellJushoShutoku"> <input type="submit" name="ctl00$ContentPlaceHolder1$btnJushoShutoku" value="住所取得" id="ctl00_ContentPlaceHolder1_btnJushoShutoku" tabindex="16" class="ButtonSkeletonBlue"> </div>
             </div>
           </div>
         </div>
@@ -412,7 +411,7 @@
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellAddress" class="InputCell">
                 <div class="InputTableColumn "> <span id="ctl00_ContentPlaceHolder1_lblAddress" class="HosokuText">市区町村・番地</span> </div>
-                <%= m.text_field :municipalities, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtAddress",class: "LargeTextBox",name: "ctl00$ContentPlaceHolder1$txtAddress",type: "text",maxlength: "50",tabindex: "18",placeholder: "例）佐渡市両津湊３５３番地（全角）",style: "ime-mode:active;" %>
+                <%= m.text_field :municipalities, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtAddress",class: "LargeTextBox",type: "text",maxlength: "50",tabindex: "18",placeholder: "例）佐渡市両津湊３５３番地（全角）",style: "ime-mode:active;" %>
               </div>
             </div>
           </div>
@@ -429,7 +428,7 @@
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellTxtMailAddressPc" class="InputCell">
                 <div class="InputTableColum"> <span id="ctl00_ContentPlaceHolder1_lblMailAddressPc" class="HosokuText">メールアドレス①【必須】</span> </div>
-                <%= f.text_field :email, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtMailAddressPc",class: "LargeTextBox",name: "ctl00$ContentPlaceHolder1$txtMailAddressPc",type: "text",maxlength: "128",tabindex: "19",placeholder: "例）sadokisen@email.com（半角）",style: "ime-mode:disabled;" %>
+                <%= f.text_field :email, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtMailAddressPc",class: "LargeTextBox",type: "text",maxlength: "128",tabindex: "19",placeholder: "例）sadokisen@email.com（半角）",style: "ime-mode:disabled;" %>
               </div>
             </div>
           </div>
@@ -437,6 +436,7 @@
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellMailAddressPcKakunin" class="InputCell">
                 <div class="InputTableColumn "> <span id="ctl00_ContentPlaceHolder1_lblMailAddressPcKakunin" class="HosokuText">確認入力</span> </div>
+                <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_txtMailAddressPcKakunin" tabindex="20" class="LargeTextBox" placeholder="確認のため、再度入力して下さい。" style="ime-mode:disabled;" />
               </div>
             </div>
           </div>
@@ -452,6 +452,7 @@
             <div class="InputTableRow FontHiragino">
               <div id="ctl00_ContentPlaceHolder1_cellMailAddressKeitaiKakunin" class="InputCell">
                 <div class="InputTableColumn "> <span id="ctl00_ContentPlaceHolder1_lblMailAddressKeitaiKakunin" class="HosokuText">確認入力</span> </div>
+                <input type="text" maxlength="128" id="ctl00_ContentPlaceHolder1_txtMailAddressKeitaiKakunin" tabindex="22" class="LargeTextBox" placeholder="確認のため、再度入力して下さい。" style="ime-mode:disabled;" />
               </div>
             </div>
           </div>
@@ -476,14 +477,14 @@
                                         "軽乗用車": 3,
                                         "バス": 4,
                                         "二輪": 5
-                                          }, { include_blank: '車種を選択'}, {id: 'car_model',name:'ctl00$ContentPlaceHolder1$ddlShashu1', required: true } %>
+                                          }, { include_blank: '車種を選択'}, {id: 'car_model', required: true } %>
                         </div>
                       </div>
                       <div id="ctl00_ContentPlaceHolder1_cellZentyouHaiki1" class="InputCell">
                         <div class="SelectWrap">
                           <%= c.select :car_displacement, {
                                         
-                                        }, { include_blank: '車長さを選択'}, {id:'car_displacement',name:'ctl00$ContentPlaceHolder1$ddlZentyouHaiki1', required: true } %>
+                                        }, { include_blank: '車長さを選択'}, {id:'car_displacement', required: true } %>
                         </div>
                       </div>
                     </div>
@@ -494,19 +495,19 @@
                       <div class="InputTableRow">
                         <div id="ctl00_ContentPlaceHolder1_cellRikuunSikyoku1" class="InputCell">
                           <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblRikuunSikyoku1" class="CarNoColumn">登録地(全角)</span> <span id="ctl00_ContentPlaceHolder1_lblRikuunSikyokuNote1" class="CarNoHosoku">例:例：新潟</span> </div>
-                          <%= c.text_field :car_registered_place, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtRikuunSikyoku1",class: "FontHiragino",name: "ctl00$ContentPlaceHolder1$txtRikuunSikyoku1",type: "text",maxlength: "5",tabindex: "25",style: "ime-mode:active;" %>
+                          <%= c.text_field :car_registered_place, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtRikuunSikyoku1",class: "FontHiragino",type: "text",maxlength: "5",tabindex: "25",style: "ime-mode:active;" %>
                         </div>
                         <div id="ctl00_ContentPlaceHolder1_cellBunruiNo1" class="InputCell">
                           <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblBunruiNo1" class="CarNoColumn">車種No.(半角)</span> <span id="ctl00_ContentPlaceHolder1_lblBunruiNoNote1" class="CarNoHosoku">例:例：500</span> </div>
-                          <%= c.text_field :car_model_number, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtBunruiNo1",class: "FontHiragino",name: "ctl00$ContentPlaceHolder1$txtBunruiNo1",type: "text",maxlength: "3",tabindex: "26",style: "ime-mode:disabled;" %>
+                          <%= c.text_field :car_model_number, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtBunruiNo1",class: "FontHiragino",type: "text",maxlength: "3",tabindex: "26",style: "ime-mode:disabled;" %>
                         </div>
                         <div id="ctl00_ContentPlaceHolder1_cellHiragana1" class="InputCell">
                           <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblHiragana1" class="CarNoColumn">かな(全角)</span> <span id="ctl00_ContentPlaceHolder1_lblHiraganaNote1" class="CarNoHosoku">例:例：わ</span> </div>
-                          <%= c.text_field :car_kana, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtHiragana1",class: "FontHiragino",name: "ctl00$ContentPlaceHolder1$txtHiragana1",type: "text",maxlength: "1",tabindex: "27",style: "ime-mode:active;" %>
+                          <%= c.text_field :car_kana, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtHiragana1",class: "FontHiragino",type: "text",maxlength: "1",tabindex: "27",style: "ime-mode:active;" %>
                         </div>
                         <div id="ctl00_ContentPlaceHolder1_cellSharyoNo1" class="InputCell">
                           <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblSharyoNo1" class="CarNoColumn">ナンバー(半角)</span> <span id="ctl00_ContentPlaceHolder1_lblSharyoNoNote1" class="CarNoHosoku">車両番号の下4桁</span> </div>
-                          <%= c.text_field :car_number, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtSharyoNo1",class: "FontHiragino",name: "ctl00$ContentPlaceHolder1$txtSharyoNo1",type: "text",maxlength: "4",tabindex: "28",style: "ime-mode:disabled;" %>
+                          <%= c.text_field :car_number, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtSharyoNo1",class: "FontHiragino",type: "text",maxlength: "4",tabindex: "28",style: "ime-mode:disabled;" %>
                         </div>
                       </div>
                     </div>
@@ -540,7 +541,7 @@
                         <div class="SelectWrap">
                           <%= c.select :car_displacement_second, {
                                           
-                                          }, { include_blank: '車長さを選択'}, {id:'car_displacement2',name:'ctl00$ContentPlaceHolder1$ddlZentyouHaiki2', required: true } %>
+                                          }, { include_blank: '車長さを選択'}, {id:'car_displacement2', required: true } %>
                         </div>
                       </div>
                     </div>
@@ -551,19 +552,19 @@
                       <div class="InputTableRow">
                         <div id="ctl00_ContentPlaceHolder1_cellRikuunSikyoku2" class="InputCell">
                           <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblRikuunSikyoku2" class="CarNoColumn">登録地(全角)</span> <span id="ctl00_ContentPlaceHolder1_lblRikuunSikyokuNote2" class="CarNoHosoku">例:例：新潟</span> </div>
-                          <%= c.text_field :car_registered_place_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtRikuunSikyoku2",class: "FontHiragino",name: "ctl00$ContentPlaceHolder1$txtRikuunSikyoku2",type: "text",maxlength: "5",tabindex: "31",style: "ime-mode:active;" %>
+                          <%= c.text_field :car_registered_place_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtRikuunSikyoku2",class: "FontHiragino",type: "text",maxlength: "5",tabindex: "31",style: "ime-mode:active;" %>
                         </div>
                         <div id="ctl00_ContentPlaceHolder1_cellBunruiNo2" class="InputCell">
                           <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblBunruiNo2" class="CarNoColumn">車種No.(半角)</span> <span id="ctl00_ContentPlaceHolder1_lblBunruiNoNote2" class="CarNoHosoku">例:例：500</span> </div>
-                          <%= c.text_field :car_model_number_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtBunruiNo2",class: "FontHiragino",name: "ctl00$ContentPlaceHolder1$txtBunruiNo2",type: "text",maxlength: "3",tabindex: "32",style: "ime-mode:disabled;" %>
+                          <%= c.text_field :car_model_number_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtBunruiNo2",class: "FontHiragino",type: "text",maxlength: "3",tabindex: "32",style: "ime-mode:disabled;" %>
                         </div>
                         <div id="ctl00_ContentPlaceHolder1_cellHiragana2" class="InputCell">
                           <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblHiragana2" class="CarNoColumn">かな(全角)</span> <span id="ctl00_ContentPlaceHolder1_lblHiraganaNote2" class="CarNoHosoku">例:例：わ</span> </div>
-                          <%= c.text_field :car_kana_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtHiragana2",class: "FontHiragino",name: "ctl00$ContentPlaceHolder1$txtHiragana2",type: "text",maxlength: "1",tabindex: "33",style: "ime-mode:active;" %>
+                          <%= c.text_field :car_kana_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtHiragana2",class: "FontHiragino",type: "text",maxlength: "1",tabindex: "33",style: "ime-mode:active;" %>
                         </div>
                         <div id="ctl00_ContentPlaceHolder1_cellSharyoNo2" class="InputCell">
                           <div class="InputTableColumn"> <span id="ctl00_ContentPlaceHolder1_lblSharyoNo2" class="CarNoColumn">ナンバー(半角)</span> <span id="ctl00_ContentPlaceHolder1_lblSharyoNoNote2" class="CarNoHosoku">車両番号の下4桁</span> </div>
-                          <%= c.text_field :car_number_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtSharyoNo2",class: "FontHiragino",name: "ctl00$ContentPlaceHolder1$txtSharyoNo2",type: "text",maxlength: "4",tabindex: "34",style: "ime-mode:disabled;" %>
+                          <%= c.text_field :car_number_second, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtSharyoNo2",class: "FontHiragino",type: "text",maxlength: "4",tabindex: "34",style: "ime-mode:disabled;" %>
                         </div>
                       </div>
                     </div>
@@ -592,7 +593,7 @@
           </tr>
           <tr>
             <td id="ctl00_ContentPlaceHolder1_cellConfirmPassword" class="InputCell">
-              <%= f.text_field :password, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtConfirmPassword",class: "LargeTextBox",name: "ctl00$ContentPlaceHolder1$txtConfirmPassword",type: "password",maxlength: "10",placeholder: "6文字以上10文字以内で入力して下さい。",tabindex: "36" %>
+              <%= f.text_field :password, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtConfirmPassword",class: "LargeTextBox",type: "password",maxlength: "10",placeholder: "6文字以上10文字以内で入力して下さい。",tabindex: "36" %>
             </td>
             <td class="PasswordRule FontHiragino" rowspan="3"> <span id="ctl00_ContentPlaceHolder1_lblConfirmPasswordRequiredNote">ご使用できる文字は大小アルファベット・数字・ハイフン｢-｣・アンダーライン｢_｣になります。</span> </td>
           </tr>
@@ -601,13 +602,20 @@
           </tr>
           <tr>
             <td id="ctl00_ContentPlaceHolder1_cellConfirmPasswordRequired" class="InputCell">
-              <%= f.text_field :password_confirmation, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtConfirmPasswordRequired",class: "LargeTextBox",name: "ctl00$ContentPlaceHolder1$txtConfirmPasswordRequired",type: "password",maxlength: "10",placeholder: "確認のため、再度入力してください。",tabindex: "37" %>
+              <%= f.text_field :password_confirmation, autofocus: true,id: "ctl00_ContentPlaceHolder1_txtConfirmPasswordRequired",class: "LargeTextBox",type: "password",maxlength: "10",placeholder: "確認のため、再度入力してください。",tabindex: "37" %>
             </td>
           </tr>
         </tbody> <br> </table>
+        <div class="InputCell">
+          <div class="TitleArea">
+            <div class="TitleLabel"> <span id="ctl00_ContentPlaceHolder1_lblPasswordInfo">会員番号</span> </div>
+            <div class="HissuIcon"> <span id="ctl00_ContentPlaceHolder1_iconPassword" class="FontHiragino">必須</span> </div>
+          </div>
+          <%= f.text_field :name, autofocus: true,id: "MemberShipNumber",class: "LargeTextBox",type: "text",maxlength: "8",tabindex: "19",placeholder: "7文字以内",style: "ime-mode:disabled;" %>
+        </div>
       <div class="UnderButtonArea">
-        <%= f.submit "戻る",type: "submit",name: "ctl00$ContentPlaceHolder1$btnBack",id: "ctl00_ContentPlaceHolder1_btnBack",tabindex:"40",class: "Button ButtonGray",value: "戻る" %>
-          <%= f.submit "確認",type: "submit",name: "ctl00$ContentPlaceHolder1$btnEntry",id: "ctl00_ContentPlaceHolder1_btnEntry",onclick: "window.scrollTo(0,0);",value: "登録",tabindex: "41",class: "Button ButtonBlue" %>
+        <%= f.submit "戻る",type: "submit",id: "ctl00_ContentPlaceHolder1_btnBack",tabindex:"40",class: "Button ButtonGray",value: "戻る" %>
+          <%= f.submit "確認",type: "submit",id: "ctl00_ContentPlaceHolder1_btnEntry",onclick: "window.scrollTo(0,0);",value: "登録",tabindex: "41",class: "Button ButtonBlue" %>
       </div>
     </div>
     </div>
@@ -672,7 +680,7 @@
             setMenuOptions2(e.target.value); 
         });
       </script>
-      <script type="text/javascript">
+      <script>
       $(document).ready(function() {
           $("#ctl00_ContentPlaceHolder1_btnEntry").click(function(event) {
               var password = $("#ctl00_ContentPlaceHolder1_txtConfirmPassword").val();
