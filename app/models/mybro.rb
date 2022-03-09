@@ -1,0 +1,2 @@
+class Mybro < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class SadoController < ApplicationController
+end
