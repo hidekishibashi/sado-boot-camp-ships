@@ -1,0 +1,2 @@
+class SuzukiController < ApplicationController
+end
