@@ -7,12 +7,12 @@ class Member < ApplicationRecord
     validates :birthday_month, presence: true
     validates :birthday_day, presence: true
     validates :gender, presence: true
-    validates :telephone_number_first, presence: true, format: { with: /\A[0-9]+\z/}
-    validates :telephone_number_second, presence: true, format: { with: /\A[0-9]+\z/}
-    validates :telephone_number_third, presence: true, format: { with: /\A[0-9]+\z/}
-    validates :landline_number_first, presence: true, format: { with: /\A[0-9]+\z/}
-    validates :landline_number_second, presence: true, format: { with: /\A[0-9]+\z/}
-    validates :landline_number_third, presence: true, format: { with: /\A[0-9]+\z/}
+    validates :telephone_number_first, format: { with: /\A[0-9]+\z/}
+    validates :telephone_number_second, format: { with: /\A[0-9]+\z/}
+    validates :telephone_number_third, format: { with: /\A[0-9]+\z/}
+    validates :landline_number_first, format: { with: /\A[0-9]+\z/}
+    validates :landline_number_second, format: { with: /\A[0-9]+\z/}
+    validates :landline_number_third, format: { with: /\A[0-9]+\z/}
     validates :post_code, presence: true, format: { with: /\A\d{7}\z/}
     validates :municipalities, presence: true, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/}
     validates :address, presence: true

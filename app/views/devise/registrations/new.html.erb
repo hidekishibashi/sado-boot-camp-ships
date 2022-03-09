@@ -464,7 +464,7 @@
           <tbody>
             <tr>
               <td>
-                <div id="acdn-button" class="acdn-button"> <input type="hidden" name="ctl00$ContentPlaceHolder1$Hiddenacdn" id="ctl00_ContentPlaceHolder1_Hiddenacdn" value="1"> <span id="ctl00_ContentPlaceHolder1_lblCarInfo1">車両情報①</span> <span id="acdn-button-arrow" class="acdn-button-arrow">▲</span> </div>
+                <div id="acdn-button" class="acdn-button"> <input type="hidden"  id="ctl00_ContentPlaceHolder1_Hiddenacdn" value="1"> <span id="ctl00_ContentPlaceHolder1_lblCarInfo1">車両情報①</span> <span id="acdn-button-arrow" class="acdn-button-arrow">▲</span> </div>
                 <div id="acdn-target" class="acdn-target" style>
                   <div id="ctl00_ContentPlaceHolder1_divSyasyuHaikiryoInputable1" class="InputTable ShashuArea">
                     <div class="InputTableRow FontHiragino">
@@ -477,14 +477,14 @@
                                         "軽乗用車": 3,
                                         "バス": 4,
                                         "二輪": 5
-                                          }, { include_blank: '車種を選択'}, {id: 'car_model', required: true } %>
+                                          }, { include_blank: '車種を選択'}, {id: 'car_model'} %>
                         </div>
                       </div>
                       <div class="InputCell">
                         <div class="SelectWrap">
                           <%= c.select :car_displacement, {
                                         
-                                        }, { include_blank: '車長さを選択'}, {id:'car_displacement', required: true } %>
+                                        }, { include_blank: '車長さを選択'}, {id:'car_displacement'} %>
                         </div>
                       </div>
                     </div>
@@ -521,7 +521,7 @@
             </tr>
             <tr>
               <td>
-                <div id="acdn-button2" class="acdn-button"> <input type="hidden" name="ctl00$ContentPlaceHolder1$Hiddenacdn2" id="ctl00_ContentPlaceHolder1_Hiddenacdn2" value="0"> <span id="ctl00_ContentPlaceHolder1_lblCarInfo2">車両情報②</span> <span id="acdn-button-arrow2" class="acdn-button-arrow">▼</span> </div>
+                <div id="acdn-button2" class="acdn-button"> <input type="hidden" id="ctl00_ContentPlaceHolder1_Hiddenacdn2" value="0"> <span id="ctl00_ContentPlaceHolder1_lblCarInfo2">車両情報②</span> <span id="acdn-button-arrow2" class="acdn-button-arrow">▼</span> </div>
                 <div id="acdn-target2" class="acdn-target">
                   <div id="ctl00_ContentPlaceHolder1_divSyasyuHaikiryoInputable2" class="InputTable ShashuArea">
                     <div class="InputTableRow FontHiragino">
@@ -534,14 +534,14 @@
                                         "軽乗用車": 3,
                                         "バス": 4,
                                         "二輪": 5
-                                          }, { include_blank: '車種を選択'}, {id: 'car_model2', required: true } %>
+                                          }, { include_blank: '車種を選択'}, {id: 'car_model2' } %>
                         </div>
                       </div>
                       <div id="ctl00_ContentPlaceHolder1_cellZentyouHaiki2" class="InputCell">
                         <div class="SelectWrap">
                           <%= c.select :car_displacement_second, {
                                           
-                                          }, { include_blank: '車長さを選択'}, {id:'car_displacement2', required: true } %>
+                                          }, { include_blank: '車長さを選択'}, {id:'car_displacement2'} %>
                         </div>
                       </div>
                     </div>
@@ -689,6 +689,54 @@
                   $("#ctl00_lblErrorMessage").html("パスワードに値を入力してください。")
                }
             })
+        })
+   </script>
+   <script>
+      $(document).ready(function() {
+          $("#ctl00_ContentPlaceHolder1_btnEntry").click(function(event) {
+              var password = $("#ctl00_ContentPlaceHolder1_txtConfirmPassword").val();
+              var password_confirmation = $("#ctl00_ContentPlaceHolder1_txtConfirmPasswordRequired").val();
+                if (password != password_confirmation) {
+                  event.preventDefault();
+                  $("#ctl00_lblErrorMessage").html("パスワードが一致していません。")
+               }
+            })
+        })
+   </script>
+   <script>
+      $(document).ready(function() {
+        $("#ctl00_ContentPlaceHolder1_btnEntry").click(function(event) {
+          var telephone_number_first = $("#ctl00_ContentPlaceHolder1_txtTelNichuu1").val();
+          var landline_number_first = $("#ctl00_ContentPlaceHolder1_txtTelJitaku1").val();
+          if (telephone_number_first == '' && landline_number_first == '') {
+              event.preventDefault();
+              $("#ctl00_lblErrorMessage").html("固定電話番号か携帯電話番号に値を入力してください。")
+            }
+          })
+        })
+   </script>
+   <script>
+      $(document).ready(function() {
+        $("#ctl00_ContentPlaceHolder1_btnEntry").click(function(event) {
+          var email = $("#ctl00_ContentPlaceHolder1_txtMailAddressPc").val();
+          var email_confirmation = $("#ctl00_ContentPlaceHolder1_txtMailAddressPcKakunin").val();
+          if (email != email_confirmation) {
+              event.preventDefault();
+              $("#ctl00_lblErrorMessage").html("メールアドレスが一致していません。")
+            }
+          })
+        })
+   </script>
+   <script>
+      $(document).ready(function() {
+        $("#ctl00_ContentPlaceHolder1_btnEntry").click(function(event) {
+          var email_2 = $("#ctl00_ContentPlaceHolder1_txtMailAddressKeitai").val();
+          var email_confirmation_2 = $("#ctl00_ContentPlaceHolder1_txtMailAddressKeitaiKakunin").val();
+          if (email_2 != email_confirmation_2) {
+              event.preventDefault();
+              $("#ctl00_lblErrorMessage").html("メールアドレスが一致していません。")
+            }
+          })
         })
    </script>
 </body>
