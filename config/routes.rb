@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :high_scores
   devise_for :users, controllers: {
      registrations: 'users/registrations',
      sessions: 'users/sessions'
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   get 'fares/car-ferry', to: 'fares#car_ferry'
   get 'fares/jetfoil', to: 'fares#jetfoil'
   get 'reserve/index', to: 'reserve#index'
+  get 'hello-world', to: 'hello#index'
 end
