@@ -3,6 +3,7 @@ Rails.application.routes.draw do
      registrations: 'users/registrations',
      sessions: 'users/sessions'
    }
+  resources :high_scores
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/', to: 'top#index'
   get 'fares/car-ferry', to: 'fares#car_ferry'
