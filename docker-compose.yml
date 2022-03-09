@@ -9,7 +9,7 @@ services:
       - '.:/usr/src/app'
     tty: true
     stdin_open: true
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle install && bundle exec rails s -p 3000 -b '0.0.0.0'"
     # db作成後にコンテナ作成
     depends_on: 
       - db
@@ -17,7 +17,7 @@ services:
   db:
     image: postgres:13
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - sado_db:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: password
@@ -33,3 +33,7 @@ services:
     environment:
         PGADMIN_DEFAULT_EMAIL: "pg@example.com"
         PGADMIN_DEFAULT_PASSWORD: "pg-password"
+
+volumes:
+  sado_db:
+    external: true
