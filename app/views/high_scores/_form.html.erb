@@ -21,6 +21,11 @@
     <%= form.number_field :score %>
   </div>
 
+  <div class="fune">
+    <%= form.label :ship_section %>
+    <%= form.select :ship_section, Ship.ship_sections.keys.map {|k, v| [I18n.t("ships.ship_sctions.#{k}"), k]} %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
