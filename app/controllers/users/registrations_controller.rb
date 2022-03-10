@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
    def create
     ActiveRecord::Base.transaction do
-        member = Member.create(first_name: params[:user][:members][:first_name],
+        member = Member.create!(first_name: params[:user][:members][:first_name],
         family_name: params[:user][:members][:family_name],
         first_name_kana: params[:user][:members][:first_name_kana],
         family_name_kana: params[:user][:members][:family_name_kana],
@@ -31,7 +31,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         address: params[:user][:members][:address],
         municipalities: params[:user][:members][:municipalities])
         
-        car = Car.create(car_model: params[:user][:cars][:car_model],
+        car = Car.create!(car_model: params[:user][:cars][:car_model],
         car_displacement: params[:user][:cars][:car_displacement],
         car_registered_place: params[:user][:cars][:car_registered_place],
         car_model_number: params[:user][:cars][:car_model_number],
@@ -43,8 +43,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
         car_model_number_second: params[:user][:cars][:car_model_number_second],
         car_kana_second: params[:user][:cars][:car_kana_second],
         car_number_second: params[:user][:cars][:car_number_second])
+        super
+        rescue ActiveRecord::RecordInvalid
+          redirect_to new_user_registration_path
       end
-    super
   end
   # GET /resource/edit
   # def edit
