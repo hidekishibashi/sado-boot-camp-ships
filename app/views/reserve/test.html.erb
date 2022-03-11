@@ -1,0 +1,130 @@
+<style type="text/css">
+    .time{display: none;}
+    .ship{display: none;}
+    .ship_class{display: none;}
+</style>
+
+<%= form_tag('index') do %>
+    <div class="reserve_id">
+        reserve_id
+        <input type="text" name="reserve_id">
+    </div>
+    <br><br>
+
+    <div class="actions">
+        <input type="submit" value="送信">
+    </div>
+
+    <select id="select_port" name="port">
+        <option value="">1つ選択してください</option>
+        <option value="0">新潟</option>
+        <option value="1">両津</option>
+    </select>
+    <br><br>
+
+    <select id="select_ship" name="ship">
+        <option value="">1つ選択してください</option>
+        <option value="0" class="ship">カーフェリー</option>
+        <option value="1" class="ship">ジェットフォイル</option>
+    </select>
+    <br><br>
+
+    <select id="select_time">
+        <option value="">1つ選択してください</option>
+        <%= @timetable_car_ferry_from_niigata.each do |time| %>
+            <option value=<%=time.id%> class="time timetable_1">
+                <%= time.converted_info %>
+            </option>
+        <% end %>
+        <%= @timetable_jetfoil_from_niigata.each do |time| %>
+            <option value=<%=time.id%> class="time timetable_2">
+                <%= time.converted_info %>
+            </option>
+        <% end %>
+        <%= @timetable_car_ferry_from_ryoutu.each do |time| %>
+            <option value=<%=time.id%> class="time timetable_3">
+                <%= time.converted_info %>
+            </option>
+        <% end %>
+        <%= @timetable_jetfoil_from_ryoutu.each do |time| %>
+            <option value=<%=time.id%> class="time timetable_4">
+                <%= time.converted_info %>
+            </option>
+        <% end %>
+    </select>
+    <br><br>
+
+    <select id="select_ship_class" name="ship_class">
+        <option value="">1つ選択してください</option>
+        <%= @car_ferry_ship_class.each do |ship_class| %>
+            <option value=<%=ship_class.id%> class="ship_class car_ferry_ship_class">
+                <%= ship_class.name %>
+            </option>
+        <% end %>
+        <%= @jetfoil_ship_class.each do |ship_class| %>
+            <option value=<%=ship_class.id%> class="ship_class jetfoil_ship_class">
+                <%= ship_class.name %>
+            </option>
+        <% end %>
+    </select>
+<% end %>
+
+<script>
+    let port; //0:新潟　1:両津
+    let ship; //0:カーフェリー　1:ジェットフォイル　
+    let class_time = "time timetable_1";
+    let class_ship_class = "ship_class car_ferry_ship_class";
+
+    let select_port = document.querySelector("#select_port");
+    select_port.addEventListener('change', (event) => {
+        port = event.target.value;
+        let ship_class = document.getElementsByClassName("ship");
+        for(let i=0; i<ship_class.length; i++) {
+            ship_class[i].style.display = "block";
+        }
+    });
+
+    let select_time = document.querySelector("#select_ship");
+    select_time.addEventListener('change', (event) => {
+        //リセット
+        ship = event.target.value;
+        let reset_time = document.getElementsByClassName(class_time);
+        for(let i=0; i<reset_time.length; i++) {
+            reset_time[i].style.display = "none";
+        }
+        let reset_ship_class = document.getElementsByClassName(class_ship_class);
+        for(let i=0; i<reset_ship_class.length; i++) {
+            reset_ship_class[i].style.display = "none";
+        }
+
+        if(ship == 0) {
+            class_ship_class = "ship_class car_ferry_ship_class"
+        }else {
+            class_ship_class = "ship_class jetfoil_ship_class"
+        }
+        
+        if(port == 0) {
+            if(ship == 0) {
+                class_time = "time timetable_1"
+            }else {
+                class_time = "time timetable_2"
+            }
+        }else {
+            if(ship == 0) {
+                class_time = "time timetable_3"
+            }else {
+                class_time = "time timetable_4"
+            }
+        }
+        console.log(class_time);
+        let time = document.getElementsByClassName(class_time);
+        for(let i=0; i<time.length; i++) {
+            time[i].style.display = "block";
+        }
+        let ship_class = document.getElementsByClassName(class_ship_class);
+        for(let i=0; i<ship_class.length; i++) {
+            ship_class[i].style.display = "block";
+        }
+    });
+</script>
+

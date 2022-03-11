@@ -58,11 +58,12 @@ ActiveRecord::Schema.define(version: 2022_03_02_052955) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  #予約詳細
   create_table "reservation_details", force: :cascade do |t|
-    t.bigint "reserve_id", null: false
-    t.integer "route_section", null: false
+    t.bigint "reserve_id", null: false                    #予約ID
+    t.integer "route_section", null: false                #1:片道　0:往復
     t.date "use_day", null: false
-    t.bigint "timetable_id", null: false
+    t.bigint "timetable_id", null: false                  #時刻表テーブルのID
     t.bigint "ship_class_id", null: false
     t.integer "price", null: false
     t.integer "adult_reservation_number", null: false
@@ -76,10 +77,11 @@ ActiveRecord::Schema.define(version: 2022_03_02_052955) do
     t.index ["timetable_id"], name: "index_reservation_details_on_timetable_id"
   end
 
+  #予約
   create_table "reserves", force: :cascade do |t|
-    t.bigint "member_id", null: false
-    t.string "receipt_number", null: false
-    t.integer "roundtrip_section", null: false
+    t.bigint "member_id", null: false             #メンバーID
+    t.string "receipt_number", null: false        #受付番号
+    t.integer "roundtrip_section", null: false    #往復/片道 1:片道　0:往復
     t.datetime "cancel_day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
