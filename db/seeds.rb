@@ -9,8 +9,6 @@
 ActiveRecord::Base.transaction do
   niigata_port = Port.create!(name: '新潟')
   ryoutu_port = Port.create!(name: '両津')
-  
-
 
   tokiwamaru = Ship.create!(name: 'ときわ丸',ship_section: :car_ferry)
   okesamaru = Ship.create!(name: 'おけさ丸',ship_section: :car_ferry)
